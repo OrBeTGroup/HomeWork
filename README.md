@@ -1,5 +1,7 @@
 HomeWork
+
 --payment--
+
 Проверка account на отсутствие NULL
 
 Проверка pay_date на отсутствие NULL
