@@ -549,7 +549,7 @@ $(function() {
         <p>To automatically generate a notebook that does this run:</p>
         <div class="input-group mb-3">
           
-            <input type="text" class="form-control edit-command" readonly value="great_expectations suite edit aermokhin.ods_payment.warning">
+            <input type="text" class="form-control edit-command" readonly value="great_expectations suite edit aermokhin.ods_traffic.warning">
           
             <div class="input-group-append">
                 <button class="btn btn-primary copy-edit-command" type="button"><i class="far fa-clipboard"></i> Copy</button>
@@ -576,7 +576,7 @@ $(function() {
         <a href="../../../index.html">
           <img
             class="NO-CACHE"
-            src="https://great-expectations-web-assets.s3.us-east-2.amazonaws.com/logo-long.png?d=20210511T120354.232855Z&dataContextId=64eaa5b4-a9ea-4289-bba2-ea5ebf9f3344"
+            src="https://great-expectations-web-assets.s3.us-east-2.amazonaws.com/logo-long.png?d=20210511T120354.276828Z&dataContextId=64eaa5b4-a9ea-4289-bba2-ea5ebf9f3344"
             alt="Great Expectations"
             style="width: auto; height: 50px"
           />
@@ -585,7 +585,7 @@ $(function() {
       
         <ol class="ge-breadcrumbs breadcrumb d-md-inline-flex bg-light ml-2 mr-0 mt-0 mb-0 pt-0 pb-0 d-none">
             <li class="ge-breadcrumbs-item breadcrumb-item"><a href="../../../index.html">Home</a></li>
-            <li class="ge-breadcrumbs-item breadcrumb-item active" aria-current="page">Expectations / aermokhin.ods_payment.warning</li>
+            <li class="ge-breadcrumbs-item breadcrumb-item active" aria-current="page">Expectations / aermokhin.ods_traffic.warning</li>
         </ol>
       
     </nav>
@@ -678,7 +678,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-2"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                account
+                bytes_sent
               </a>
             </li>
           
@@ -687,7 +687,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-3"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                pay_date
+                device_id
               </a>
             </li>
           
@@ -696,7 +696,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-4"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                pay_doc_num
+                device_ip_addr
               </a>
             </li>
           
@@ -705,7 +705,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-5"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                pay_doc_type
+                timestamp
               </a>
             </li>
           
@@ -792,7 +792,7 @@ $(function() {
 
     <tbody>
       <tr>
-          <td id="section-1-content-block-2-cell-1-1" ><div class="show-scrollbars">Expectation Suite Name</div></td><td id="section-1-content-block-2-cell-1-2" ><div class="show-scrollbars">aermokhin.ods_payment.warning</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-1-1" ><div class="show-scrollbars">Expectation Suite Name</div></td><td id="section-1-content-block-2-cell-1-2" ><div class="show-scrollbars">aermokhin.ods_traffic.warning</div></td></tr><tr>
           <td id="section-1-content-block-2-cell-2-1" ><div class="show-scrollbars">Great Expectations Version</div></td><td id="section-1-content-block-2-cell-2-2" ><div class="show-scrollbars">0.13.14</div></td></tr></tbody>
 </table>
 
@@ -837,7 +837,7 @@ $(function() {
         
         <li >
                 <span >
-                    Must have exactly <span class="badge badge-secondary" >8</span> columns.
+                    Must have exactly <span class="badge badge-secondary" >6</span> columns.
                 </span>
             </li>
     
@@ -853,7 +853,7 @@ $(function() {
         
         <li >
                 <span >
-                    Must have these columns in this order: <span class="badge badge-secondary" >user_id</span>, <span class="badge badge-secondary" >pay_doc_type</span>, <span class="badge badge-secondary" >pay_doc_num</span>, <span class="badge badge-secondary" >account</span>, <span class="badge badge-secondary" >phone</span>, <span class="badge badge-secondary" >billing_period</span>, <span class="badge badge-secondary" >pay_date</span>, <span class="badge badge-secondary" >sum</span>
+                    Must have these columns in this order: <span class="badge badge-secondary" >user_id</span>, <span class="badge badge-secondary" >timestamp</span>, <span class="badge badge-secondary" >device_id</span>, <span class="badge badge-secondary" >device_ip_addr</span>, <span class="badge badge-secondary" >bytes_sent</span>, <span class="badge badge-secondary" >bytes_received</span>
                 </span>
             </li>
     
@@ -891,15 +891,6 @@ $(function() {
   
         <p >This Expectation suite currently contains 16 total Expectations across 4 columns.</p>
       
-    
-        <div ><h4>This is an <em>example</em> suite</h4>
-<ul>
-<li>This suite was made by quickly glancing at 1000 rows of your data.</li>
-<li>This is <strong>not a production suite</strong>. It is meant to show examples of expectations.</li>
-<li>Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.</li>
-</ul>
-</div>
-      
     </div>
 
 </div>
@@ -917,7 +908,7 @@ $(function() {
         <div>
           
                 <h5 class="m-0" >
-                    account
+                    bytes_sent
                 </h5>
             
         </div>
@@ -932,6 +923,358 @@ $(function() {
     
 
 <ul id="section-2-content-block-2-body" >
+    
+            
+        
+        <li >
+                <span >
+                    values must never be null.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    minimum value must be greater than or equal to <span class="badge badge-secondary" >42</span> and less than or equal to <span class="badge badge-secondary" >44</span>.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    maximum value must be greater than or equal to <span class="badge badge-secondary" >49927</span> and less than or equal to <span class="badge badge-secondary" >49929</span>.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    mean must be greater than or equal to <span class="badge badge-secondary" >25715.056</span> and less than or equal to <span class="badge badge-secondary" >25717.056</span>.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    median must be greater than or equal to <span class="badge badge-secondary" >26426.5</span> and less than or equal to <span class="badge badge-secondary" >26428.5</span>.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    quantiles must be within the following value ranges.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+
+
+
+<table
+  id="section-2-content-block-2-body"
+  class="table table-sm table-unbordered col-4 mt-2" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+    
+      <thead >
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  Quantile
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Min Value
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Max Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-2-content-block-2-cell-1-1" ><div class="show-scrollbars">0.05</div></td><td id="section-2-content-block-2-cell-1-2" ><div class="show-scrollbars">2941</div></td><td id="section-2-content-block-2-cell-1-3" ><div class="show-scrollbars">2943</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-2-1" ><div class="show-scrollbars">Q1</div></td><td id="section-2-content-block-2-cell-2-2" ><div class="show-scrollbars">13270</div></td><td id="section-2-content-block-2-cell-2-3" ><div class="show-scrollbars">13272</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-3-1" ><div class="show-scrollbars">Median</div></td><td id="section-2-content-block-2-cell-3-2" ><div class="show-scrollbars">26409</div></td><td id="section-2-content-block-2-cell-3-3" ><div class="show-scrollbars">26411</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-4-1" ><div class="show-scrollbars">Q3</div></td><td id="section-2-content-block-2-cell-4-2" ><div class="show-scrollbars">37381</div></td><td id="section-2-content-block-2-cell-4-3" ><div class="show-scrollbars">37383</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-5-1" ><div class="show-scrollbars">0.95</div></td><td id="section-2-content-block-2-cell-5-2" ><div class="show-scrollbars">47490</div></td><td id="section-2-content-block-2-cell-5-3" ><div class="show-scrollbars">47492</div></td></tr></tbody>
+</table></li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+</ul>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-3" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-3-content-block-1" class="col-12" >
+
+    <div id="section-3-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0" >
+                    device_id
+                </h5>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-3-content-block-2" class="col-12" >
+
+    
+
+<ul id="section-3-content-block-2-body" >
+    
+            
+        
+        <li >
+                <span >
+                    values must never be null.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    distinct values must belong to this set: <span class="badge badge-secondary" >d001</span> <span class="badge badge-secondary" >d002</span> <span class="badge badge-secondary" >d003</span> <span class="badge badge-secondary" >d004</span> <span class="badge badge-secondary" >d005</span> <span class="badge badge-secondary" >d006</span> <span class="badge badge-secondary" >d007</span> <span class="badge badge-secondary" >d008</span> <span class="badge badge-secondary" >d009</span>.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+            
+        
+        <li >
+                <span >
+                    Kullback-Leibler (KL) divergence with respect to the following distribution must be lower than 0.6.
+                </span>
+            </li>
+    
+            
+        
+        <li style="list-style-type:none;" ><div class="show-scrollbars">
+  <div id="section-3-content-block-2-graph" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-ef2126e7f93b89454878cbdf71e7944f"
+  },
+  "datasets": {
+    "data-ef2126e7f93b89454878cbdf71e7944f": [
+      {
+        "fraction": 0.104,
+        "values": "d001"
+      },
+      {
+        "fraction": 0.113,
+        "values": "d002"
+      },
+      {
+        "fraction": 0.133,
+        "values": "d003"
+      },
+      {
+        "fraction": 0.122,
+        "values": "d004"
+      },
+      {
+        "fraction": 0.103,
+        "values": "d005"
+      },
+      {
+        "fraction": 0.113,
+        "values": "d006"
+      },
+      {
+        "fraction": 0.107,
+        "values": "d007"
+      },
+      {
+        "fraction": 0.106,
+        "values": "d008"
+      },
+      {
+        "fraction": 0.099,
+        "values": "d009"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "values",
+        "type": "nominal"
+      },
+      {
+        "field": "fraction",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "values",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "fraction",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 250
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-3-content-block-2-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script></li>
+    
+            
+        
+        <li style="list-style-type:none;" >
+                <hr class="mt-1 mb-1" >
+                    
+                </hr>
+            </li>
+    
+</ul>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-4" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-4-content-block-1" class="col-12" >
+
+    <div id="section-4-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0" >
+                    device_ip_addr
+                </h5>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-4-content-block-2" class="col-12" >
+
+    
+
+<ul id="section-4-content-block-2-body" >
     
             
         
@@ -972,253 +1315,6 @@ $(function() {
     </div>
 </div>
         
-          <div id="section-3" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
-    <div class="row" >
-        
-
-<div id="section-3-content-block-1" class="col-12" >
-
-    <div id="section-3-content-block-1-header" class="alert alert-secondary" >
-        <div>
-          
-                <h5 class="m-0" >
-                    pay_date
-                </h5>
-            
-        </div>
-      
-    </div>
-
-</div>
-        
-
-<div id="section-3-content-block-2" class="col-12" >
-
-    
-
-<ul id="section-3-content-block-2-body" >
-    
-            
-        
-        <li >
-                <span >
-                    values must never be null.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    values must be greater than or equal to <span class="badge badge-secondary" >2012-01-04 00:00:00</span> and less than or equal to <span class="badge badge-secondary" >2015-12-31 00:00:00</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
-
-</div>
-        
-    </div>
-</div>
-        
-          <div id="section-4" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
-    <div class="row" >
-        
-
-<div id="section-4-content-block-1" class="col-12" >
-
-    <div id="section-4-content-block-1-header" class="alert alert-secondary" >
-        <div>
-          
-                <h5 class="m-0" >
-                    pay_doc_num
-                </h5>
-            
-        </div>
-      
-    </div>
-
-</div>
-        
-
-<div id="section-4-content-block-2" class="col-12" >
-
-    
-
-<ul id="section-4-content-block-2-body" >
-    
-            
-        
-        <li >
-                <span >
-                    values must never be null.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    minimum value must be greater than or equal to <span class="badge badge-secondary" >3</span> and less than or equal to <span class="badge badge-secondary" >5</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    maximum value must be greater than or equal to <span class="badge badge-secondary" >49988</span> and less than or equal to <span class="badge badge-secondary" >49990</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    mean must be greater than or equal to <span class="badge badge-secondary" >25418.654</span> and less than or equal to <span class="badge badge-secondary" >25420.654</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    median must be greater than or equal to <span class="badge badge-secondary" >25382.5</span> and less than or equal to <span class="badge badge-secondary" >25384.5</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    quantiles must be within the following value ranges.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-
-
-
-<table
-  id="section-4-content-block-2-body"
-  class="table table-sm table-unbordered col-4 mt-2" 
-  data-toggle="table"
-  
->
-    
-    
-    
-      
-    
-      <thead >
-        <tr>
-            
-                
-                <th
-                  
-                >
-                  Quantile
-                </th>
-            
-                
-                <th
-                  
-                >
-                  Min Value
-                </th>
-            
-                
-                <th
-                  
-                >
-                  Max Value
-                </th>
-            
-        </tr>
-      </thead>
-
-    <tbody>
-      <tr>
-          <td id="section-4-content-block-2-cell-1-1" ><div class="show-scrollbars">0.05</div></td><td id="section-4-content-block-2-cell-1-2" ><div class="show-scrollbars">3158</div></td><td id="section-4-content-block-2-cell-1-3" ><div class="show-scrollbars">3160</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-2-1" ><div class="show-scrollbars">Q1</div></td><td id="section-4-content-block-2-cell-2-2" ><div class="show-scrollbars">12867</div></td><td id="section-4-content-block-2-cell-2-3" ><div class="show-scrollbars">12869</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-3-1" ><div class="show-scrollbars">Median</div></td><td id="section-4-content-block-2-cell-3-2" ><div class="show-scrollbars">25360</div></td><td id="section-4-content-block-2-cell-3-3" ><div class="show-scrollbars">25362</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-4-1" ><div class="show-scrollbars">Q3</div></td><td id="section-4-content-block-2-cell-4-2" ><div class="show-scrollbars">38125</div></td><td id="section-4-content-block-2-cell-4-3" ><div class="show-scrollbars">38127</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-5-1" ><div class="show-scrollbars">0.95</div></td><td id="section-4-content-block-2-cell-5-2" ><div class="show-scrollbars">48055</div></td><td id="section-4-content-block-2-cell-5-3" ><div class="show-scrollbars">48057</div></td></tr></tbody>
-</table></li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
-
-</div>
-        
-    </div>
-</div>
-        
           <div id="section-5" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
     <div class="row" >
         
@@ -1229,7 +1325,7 @@ $(function() {
         <div>
           
                 <h5 class="m-0" >
-                    pay_doc_type
+                    timestamp
                 </h5>
             
         </div>
@@ -1265,90 +1361,9 @@ $(function() {
         
         <li >
                 <span >
-                    distinct values must belong to this set: <span class="badge badge-secondary" >MASTER</span> <span class="badge badge-secondary" >MIR</span> <span class="badge badge-secondary" >VISA</span>.
+                    values must be greater than or equal to <span class="badge badge-secondary" >2012-01-03 18:22:31.268000</span> and less than or equal to <span class="badge badge-secondary" >2015-12-31 19:22:31.268000</span>.
                 </span>
             </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    Kullback-Leibler (KL) divergence with respect to the following distribution must be lower than 0.6.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" ><div class="show-scrollbars">
-  <div id="section-5-content-block-2-graph" ></div>
-</div>
-<script>
-    // Assign the specification to a local variable vlSpec.
-    vlSpec = {
-  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
-  "autosize": "fit",
-  "config": {
-    "view": {
-      "continuousHeight": 300,
-      "continuousWidth": 400
-    }
-  },
-  "data": {
-    "name": "data-325e7b3d8aa0b412faf3b8218791f05c"
-  },
-  "datasets": {
-    "data-325e7b3d8aa0b412faf3b8218791f05c": [
-      {
-        "fraction": 0.346,
-        "values": "MASTER"
-      },
-      {
-        "fraction": 0.339,
-        "values": "MIR"
-      },
-      {
-        "fraction": 0.315,
-        "values": "VISA"
-      }
-    ]
-  },
-  "encoding": {
-    "tooltip": [
-      {
-        "field": "values",
-        "type": "nominal"
-      },
-      {
-        "field": "fraction",
-        "type": "quantitative"
-      }
-    ],
-    "x": {
-      "field": "values",
-      "type": "nominal"
-    },
-    "y": {
-      "field": "fraction",
-      "type": "quantitative"
-    }
-  },
-  "height": 400,
-  "mark": "bar",
-  "width": 250
-};
-    // Embed the visualization in the container with id `vis`
-    vegaEmbed('#section-5-content-block-2-graph', vlSpec, {
-        actions: false
-    }).then(result=>console.log(result)).catch(console.warn);
-</script></li>
     
             
         

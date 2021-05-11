@@ -179,7 +179,7 @@ td .show-scrollbars {
 
   
 
-<link rel="shortcut icon" href="../../../static/images/favicon.ico" type="image/x-icon"/>
+<link rel="shortcut icon" href="../../../../../static/images/favicon.ico" type="image/x-icon"/>
   </head>
 
   <body>
@@ -251,7 +251,7 @@ img.dev-loop {
         <div class="card-header"><h4>How to work with Great Expectations</h4></div>
             <div class="card-body">
               <div class="image-sizer text-center">
-                  <img src="../../../static/images/iterative-dev-loop.png" class="img-fluid rounded-sm mx-auto dev-loop">
+                  <img src="../../../../../../static/images/iterative-dev-loop.png" class="img-fluid rounded-sm mx-auto dev-loop">
               </div>
                   <p>
                       Welcome! Now that you have initialized your project, the best way to work with Great Expectations is in this iterative dev loop:
@@ -401,7 +401,7 @@ img.dev-loop {
                 <div class="card-header"><h4>Validation results save you time.</h4></div>
                 <div class="card-body">
                   <div class="image-sizer text-center">
-                      <img src="../../../static/images/validation_failed_unexpected_values.gif" class="img-fluid rounded-sm mx-auto">
+                      <img src="../../../../../../static/images/validation_failed_unexpected_values.gif" class="img-fluid rounded-sm mx-auto">
                   </div>
                   <p>This is an example of what a single failed Expectation looks like in Data Docs. Note the failure includes unexpected values from your data. This helps you debug pipelines faster.</p>
                 </div>
@@ -429,7 +429,7 @@ img.dev-loop {
                 <div class="card-header"><h4>Great Expectations provides a large library of expectations.</h4></div>
                 <div class="card-body">
                   <div class="image-sizer text-center">
-                      <img src="../../../static/images/glossary_scroller.gif" class="img-fluid rounded-sm mx-auto">
+                      <img src="../../../../../../static/images/glossary_scroller.gif" class="img-fluid rounded-sm mx-auto">
                   </div>
                   <p><a href="https://docs.greatexpectations.io/en/latest/reference/glossary_of_expectations.html?utm_source=walkthrough&utm_medium=glossary">Nearly 50 built in expectations</a> allow you to express how you understand your data, and you can add custom
                   expectations if you need a new one.
@@ -549,7 +549,7 @@ $(function() {
         <p>To automatically generate a notebook that does this run:</p>
         <div class="input-group mb-3">
           
-            <input type="text" class="form-control edit-command" readonly value="great_expectations suite edit aermokhin.ods_payment.warning">
+            <textarea class="form-control edit-command" readonly>great_expectations suite edit aermokhin.ods_payment.warning</textarea>
           
             <div class="input-group-append">
                 <button class="btn btn-primary copy-edit-command" type="button"><i class="far fa-clipboard"></i> Copy</button>
@@ -573,10 +573,10 @@ $(function() {
   <div class="mr-auto">
     <nav class="d-flex align-items-center">
       <div class="float-left navbar-brand m-0 h-100">
-        <a href="../../../index.html">
+        <a href="../../../../../../index.html">
           <img
             class="NO-CACHE"
-            src="https://great-expectations-web-assets.s3.us-east-2.amazonaws.com/logo-long.png?d=20210511T120354.232855Z&dataContextId=64eaa5b4-a9ea-4289-bba2-ea5ebf9f3344"
+            src="https://great-expectations-web-assets.s3.us-east-2.amazonaws.com/logo-long.png?d=20210511T120354.694569Z&dataContextId=64eaa5b4-a9ea-4289-bba2-ea5ebf9f3344"
             alt="Great Expectations"
             style="width: auto; height: 50px"
           />
@@ -584,13 +584,25 @@ $(function() {
       </div>
       
         <ol class="ge-breadcrumbs breadcrumb d-md-inline-flex bg-light ml-2 mr-0 mt-0 mb-0 pt-0 pb-0 d-none">
-            <li class="ge-breadcrumbs-item breadcrumb-item"><a href="../../../index.html">Home</a></li>
-            <li class="ge-breadcrumbs-item breadcrumb-item active" aria-current="page">Expectations / aermokhin.ods_payment.warning</li>
+            <li class="ge-breadcrumbs-item breadcrumb-item"><a href="../../../../../../index.html">Home</a></li>
+            <li class="ge-breadcrumbs-item breadcrumb-item active" aria-current="page">Validations / aermokhin.ods_payment.warning / aermokhin.ods_payment / 2021-05-11T12:01:36.338825+00:00</li>
         </ol>
       
     </nav>
   </div>
 </nav>
+    
+      <script>
+        try {
+          if (localStorage.getItem('ge-walkthrough-modal-dismissed') !== 'true') {
+            $(".ge-walkthrough-modal").modal();
+          }
+        }
+        catch(error) {
+          $(".ge-walkthrough-modal").modal();
+          console.log(error);
+        }
+      </script>
     
 
     <div class="container-fluid pt-4 pb-4 pl-5 pr-5">
@@ -599,8 +611,8 @@ $(function() {
   <div class="mb-4">
   
     <div class="col-12 p-0">
-      <h4>Expectation Suite</h4>
-      <p class="lead">A collection of Expectations defined for batches of data.</p>
+      <h4>Expectation Validation Result</h4>
+      <p class="lead">Evaluates whether a batch of data matches expectations.</p>
     </div>
   
 </div>
@@ -633,6 +645,22 @@ $(function() {
     <strong>Actions</strong>
   </div>
   <div class="card-body p-3">
+    
+      <div class="mb-2">
+        <p class="card-text col-12 p-0 mb-1">
+          Validation Filter:
+        </p>
+        <div class="d-flex justify-content-center">
+          <div class="btn-group btn-group-toggle" data-toggle="buttons">
+            <label class="btn btn-primary active" onclick="showAllValidations()">
+              <input type="radio" name="options" id="option1" autocomplete="off" checked> Show All
+            </label>
+            <label class="btn btn-primary" onclick="hideSucceededValidations()">
+              <input type="radio" name="options" id="option2" autocomplete="off"> Failed Only
+            </label>
+          </div>
+        </div>
+      </div>
     
     
       
@@ -678,7 +706,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-2"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                account
+                Table-Level Expectations
               </a>
             </li>
           
@@ -687,7 +715,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-3"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                pay_date
+                account
               </a>
             </li>
           
@@ -696,7 +724,7 @@ $(function() {
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-4"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
-                pay_doc_num
+                pay_date
               </a>
             </li>
           
@@ -704,6 +732,15 @@ $(function() {
           
             <li class="nav-item col-12">
               <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-5"
+                 style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
+                pay_doc_num
+              </a>
+            </li>
+          
+        
+          
+            <li class="nav-item col-12">
+              <a class="nav-link ge-navigation-sidebar-link ml-1" href="#section-6"
                  style="white-space: normal; word-break: break-all;overflow-wrap: normal;">
                 pay_doc_type
               </a>
@@ -723,7 +760,7 @@ $(function() {
     <div class="row" >
         
 
-<div id="section-1-content-block-1" class="col-12" >
+<div id="section-1-content-block-1" class="col-12 p-0" >
 
     <div id="section-1-content-block-1-header" class="alert alert-secondary" >
         <div>
@@ -734,12 +771,21 @@ $(function() {
             
         </div>
       
+    
+        <div id="section-1-content-block-1-subheader" >
+          
+                <span class="mb-0 mt-1" >
+                    <span class="h6" >Expectation Suite:</span> <a href="..\..\..\..\..\..\expectations\aermokhin\ods_payment\warning.html" >aermokhin.ods_payment.warning</a><br> Data asset: aermokhin.ods_payment<br> <span class="h6" >Status:</span> <i class="fas fa-times text-danger" aria-hidden="true"></i> Failed
+                </span>
+            
+        </div>
+      
     </div>
 
 </div>
         
 
-<div id="section-1-content-block-2" class="col-12 table-responsive mt-1" >
+<div id="section-1-content-block-2" class="col-6 table-responsive mt-1 p-1" >
 
     <div id="section-1-content-block-2-header" >
         
@@ -747,7 +793,7 @@ $(function() {
             <div>
               
                 <h6 class="m-0" >
-                    Info
+                    Statistics
                 </h6>
             
             </div>
@@ -792,115 +838,269 @@ $(function() {
 
     <tbody>
       <tr>
-          <td id="section-1-content-block-2-cell-1-1" ><div class="show-scrollbars">Expectation Suite Name</div></td><td id="section-1-content-block-2-cell-1-2" ><div class="show-scrollbars">aermokhin.ods_payment.warning</div></td></tr><tr>
-          <td id="section-1-content-block-2-cell-2-1" ><div class="show-scrollbars">Great Expectations Version</div></td><td id="section-1-content-block-2-cell-2-2" ><div class="show-scrollbars">0.13.14</div></td></tr></tbody>
+          <td id="section-1-content-block-2-cell-1-1" ><div class="show-scrollbars">Evaluated Expectations</div></td><td id="section-1-content-block-2-cell-1-2" ><div class="show-scrollbars">16</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-2-1" ><div class="show-scrollbars">Successful Expectations</div></td><td id="section-1-content-block-2-cell-2-2" ><div class="show-scrollbars">11</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-3-1" ><div class="show-scrollbars">Unsuccessful Expectations</div></td><td id="section-1-content-block-2-cell-3-2" ><div class="show-scrollbars">5</div></td></tr><tr>
+          <td id="section-1-content-block-2-cell-4-1" ><div class="show-scrollbars">Success Percent</div></td><td id="section-1-content-block-2-cell-4-2" ><div class="show-scrollbars">68.75%</div></td></tr></tbody>
 </table>
 
 </div>
         
 
-<div id="section-1-content-block-3" class="col-12" >
-
-    <div id="section-1-content-block-3-header" >
-        
-          
-            <div>
-              
-                <h6 class="m-0" >
-                    Table-Level Expectations
-                </h6>
-            
-            </div>
-          
-        </div>
-
-
-<ul id="section-1-content-block-3-body" >
-    
-            
-        
-        <li >
-                <span >
-                    Must have greater than or equal to <span class="badge badge-secondary" >900</span> and less than or equal to <span class="badge badge-secondary" >1100</span> rows.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    Must have exactly <span class="badge badge-secondary" >8</span> columns.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    Must have these columns in this order: <span class="badge badge-secondary" >user_id</span>, <span class="badge badge-secondary" >pay_doc_type</span>, <span class="badge badge-secondary" >pay_doc_num</span>, <span class="badge badge-secondary" >account</span>, <span class="badge badge-secondary" >phone</span>, <span class="badge badge-secondary" >billing_period</span>, <span class="badge badge-secondary" >pay_date</span>, <span class="badge badge-secondary" >sum</span>
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
-
-</div>
-        
-
-<div id="section-1-content-block-4" class="col-12 table-responsive mt-1" >
+<div id="section-1-content-block-3" class="col-12 p-1" >
 
     
 
-<div id="section-1-content-block-4-body" class="table table-sm" >
-  <div id="section-1-content-block-4-header" >
-        
-          
-            <div>
-              
-                <h6 class="m-0" >
-                    Notes
-                </h6>
-            
-            </div>
-          
-        </div>
 
   
-        <p >This Expectation suite currently contains 16 total Expectations across 4 columns.</p>
+    
+    
+  
+    
+  
+
+
+
+
+
+
+<div id="section-1-content-block-3-parent" >
+  
+    <p class="m-0">
+      <a data-toggle="collapse" href="#section-1-content-block-3-collapse-body-560cfe97-2b7e-41ca-909e-56a2186b8a54" aria-expanded="false" aria-controls="section-1-content-block-3-collapse-body" >
+        Show more info...
+      </a>
+    </p>
+  
+
+  <div id=section-1-content-block-3-collapse-body-560cfe97-2b7e-41ca-909e-56a2186b8a54 class="card card-body collapse m-2" >
+    
+    
+    
+      
+      
+      <div id="section-1-content-block-3-collapse-item-1-header" >
+        
+          
+            <div>
+              
+                <h6 class="m-0" >
+                    Info
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-1-content-block-3-collapse-item-1-body"
+  class="table table-sm" style="margin-bottom:0.5rem !important; margin-top:0.5rem !important;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
       
     
-        <div ><h4>This is an <em>example</em> suite</h4>
-<ul>
-<li>This suite was made by quickly glancing at 1000 rows of your data.</li>
-<li>This is <strong>not a production suite</strong>. It is meant to show examples of expectations.</li>
-<li>Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.</li>
-</ul>
-</div>
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-1-content-block-3-collapse-item-1-cell-1-1" ><div class="show-scrollbars">Great Expectations Version</div></td><td id="section-1-content-block-3-collapse-item-1-cell-1-2" ><div class="show-scrollbars">0.13.14</div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-1-cell-2-1" ><div class="show-scrollbars">Run Name</div></td><td id="section-1-content-block-3-collapse-item-1-cell-2-2" ><div class="show-scrollbars">20210511T120136.338825Z</div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-1-cell-3-1" ><div class="show-scrollbars">Run Time</div></td><td id="section-1-content-block-3-collapse-item-1-cell-3-2" ><div class="show-scrollbars">2021-05-11T12:01:36.338825+00:00</div></td></tr></tbody>
+</table>
+    
       
-    </div>
+      
+      <div id="section-1-content-block-3-collapse-item-2-header" >
+        
+          
+            <div>
+              
+                <h6 class="m-0" >
+                    Batch Markers
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-1-content-block-3-collapse-item-2-body"
+  class="table table-sm" style="margin-bottom:0.5rem !important; margin-top:0.5rem !important;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-1-content-block-3-collapse-item-2-cell-1-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >ge_load_time</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-2-cell-1-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >20210511T120135.174753Z</span>
+                </span>
+            </div></td></tr></tbody>
+</table>
+    
+      
+      
+      <div id="section-1-content-block-3-collapse-item-3-header" >
+        
+          
+            <div>
+              
+                <h6 class="m-0" >
+                    Batch Kwargs
+                </h6>
+            
+            </div>
+          
+        </div>
+
+
+
+
+<table
+  id="section-1-content-block-3-collapse-item-3-body"
+  class="table table-sm" style="margin-bottom:0.5rem !important; margin-top:0.5rem !important;" 
+  data-toggle="table"
+  
+>
+    
+    
+    
+      
+      
+      
+    
+      <thead hidden>
+        <tr>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+                
+                <th
+                  
+                >
+                  
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-1-content-block-3-collapse-item-3-cell-1-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >data_asset_name</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-3-cell-1-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >aermokhin.ods_payment</span>
+                </span>
+            </div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-3-cell-2-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >datasource</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-3-cell-2-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >gp</span>
+                </span>
+            </div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-3-cell-3-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >limit</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-3-cell-3-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >1000</span>
+                </span>
+            </div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-3-cell-4-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >schema</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-3-cell-4-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >aermokhin</span>
+                </span>
+            </div></td></tr><tr>
+          <td id="section-1-content-block-3-collapse-item-3-cell-5-1" class="pr-3" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >table</span>
+                </span>
+            </div></td><td id="section-1-content-block-3-collapse-item-3-cell-5-2" class="" ><div class="show-scrollbars">
+                <span >
+                    <span style="word-break:break-all;" >ods_payment</span>
+                </span>
+            </div></td></tr></tbody>
+</table>
+    
+  </div>
+</div>
 
 </div>
         
@@ -911,9 +1111,109 @@ $(function() {
     <div class="row" >
         
 
-<div id="section-2-content-block-1" class="col-12" >
+<div id="section-2-content-block-1" class="col-12 p-0" >
 
     <div id="section-2-content-block-1-header" class="alert alert-secondary" >
+        <div>
+          
+                <h5 class="m-0" >
+                    Table-Level Expectations
+                </h5>
+            
+        </div>
+      
+    </div>
+
+</div>
+        
+
+<div id="section-2-content-block-2" class="ml-2 mr-2 mt-0 mb-0 table-responsive hide-succeeded-validations-column-section-target-child" >
+
+    
+
+
+
+<table
+  id="section-2-content-block-2-body"
+  class="table" 
+  data-toggle="table"
+  data-search="True" data-icon-size="sm" 
+>
+    
+    
+    
+      
+    
+      <thead >
+        <tr>
+            
+                
+                <th
+                  data-sortable="True" 
+                >
+                  Status
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Expectation
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Observed Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-2-content-block-2-cell-1-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-1-2" ><div class="show-scrollbars">
+                <span >
+                    Must have greater than or equal to <span class="badge badge-secondary" >900</span> and less than or equal to <span class="badge badge-secondary" >1100</span> rows.
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-1-3" ><div class="show-scrollbars">1000</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-2-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-2-2" ><div class="show-scrollbars">
+                <span >
+                    Must have exactly <span class="badge badge-secondary" >8</span> columns.
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-2-3" ><div class="show-scrollbars">8</div></td></tr><tr>
+          <td id="section-2-content-block-2-cell-3-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-3-2" ><div class="show-scrollbars">
+                <span >
+                    Must have these columns in this order: <span class="badge badge-secondary" >user_id</span>, <span class="badge badge-secondary" >pay_doc_type</span>, <span class="badge badge-secondary" >pay_doc_num</span>, <span class="badge badge-secondary" >account</span>, <span class="badge badge-secondary" >phone</span>, <span class="badge badge-secondary" >billing_period</span>, <span class="badge badge-secondary" >pay_date</span>, <span class="badge badge-secondary" >sum</span>
+                </span>
+            </div></td><td id="section-2-content-block-2-cell-3-3" ><div class="show-scrollbars">['user_id', 'pay_doc_type', 'pay_doc_num', 'account', 'phone', 'billing_period', 'pay_date', 'sum']</div></td></tr></tbody>
+</table>
+
+</div>
+        
+    </div>
+</div>
+        
+          <div id="section-3" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+    <div class="row" >
+        
+
+<div id="section-3-content-block-1" class="col-12 p-0" >
+
+    <div id="section-3-content-block-1-header" class="alert alert-secondary" >
         <div>
           
                 <h5 class="m-0" >
@@ -927,58 +1227,84 @@ $(function() {
 </div>
         
 
-<div id="section-2-content-block-2" class="col-12" >
+<div id="section-3-content-block-2" class="ml-2 mr-2 mt-0 mb-0 table-responsive hide-succeeded-validations-column-section-target-child" >
 
     
 
-<ul id="section-2-content-block-2-body" >
+
+
+<table
+  id="section-3-content-block-2-body"
+  class="table" 
+  data-toggle="table"
+  data-search="True" data-icon-size="sm" 
+>
     
+    
+    
+      
+    
+      <thead >
+        <tr>
             
-        
-        <li >
+                
+                <th
+                  data-sortable="True" 
+                >
+                  Status
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Expectation
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Observed Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-3-content-block-2-cell-1-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-1-2" ><div class="show-scrollbars">
                 <span >
                     values must never be null.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
+            </div></td><td id="section-3-content-block-2-cell-1-3" ><div class="show-scrollbars">100% not null</div></td></tr><tr>
+          <td id="section-3-content-block-2-cell-2-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-3-content-block-2-cell-2-2" ><div class="show-scrollbars">
                 <span >
                     values must always be greater than or equal to <span class="badge badge-secondary" >1</span> characters long.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
+            </div></td><td id="section-3-content-block-2-cell-2-3" ><div class="show-scrollbars">0% unexpected</div></td></tr></tbody>
+</table>
 
 </div>
         
     </div>
 </div>
         
-          <div id="section-3" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+          <div id="section-4" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
     <div class="row" >
         
 
-<div id="section-3-content-block-1" class="col-12" >
+<div id="section-4-content-block-1" class="col-12 p-0" >
 
-    <div id="section-3-content-block-1-header" class="alert alert-secondary" >
+    <div id="section-4-content-block-1-header" class="alert alert-secondary" >
         <div>
           
                 <h5 class="m-0" >
@@ -992,58 +1318,84 @@ $(function() {
 </div>
         
 
-<div id="section-3-content-block-2" class="col-12" >
+<div id="section-4-content-block-2" class="ml-2 mr-2 mt-0 mb-0 table-responsive hide-succeeded-validations-column-section-target-child" >
 
     
 
-<ul id="section-3-content-block-2-body" >
+
+
+<table
+  id="section-4-content-block-2-body"
+  class="table" 
+  data-toggle="table"
+  data-search="True" data-icon-size="sm" 
+>
     
+    
+    
+      
+    
+      <thead >
+        <tr>
             
-        
-        <li >
+                
+                <th
+                  data-sortable="True" 
+                >
+                  Status
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Expectation
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Observed Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-4-content-block-2-cell-1-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-1-2" ><div class="show-scrollbars">
                 <span >
                     values must never be null.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
+            </div></td><td id="section-4-content-block-2-cell-1-3" ><div class="show-scrollbars">100% not null</div></td></tr><tr>
+          <td id="section-4-content-block-2-cell-2-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-4-content-block-2-cell-2-2" ><div class="show-scrollbars">
                 <span >
                     values must be greater than or equal to <span class="badge badge-secondary" >2012-01-04 00:00:00</span> and less than or equal to <span class="badge badge-secondary" >2015-12-31 00:00:00</span>.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
+            </div></td><td id="section-4-content-block-2-cell-2-3" ><div class="show-scrollbars">0% unexpected</div></td></tr></tbody>
+</table>
 
 </div>
         
     </div>
 </div>
         
-          <div id="section-4" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+          <div id="section-5" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
     <div class="row" >
         
 
-<div id="section-4-content-block-1" class="col-12" >
+<div id="section-5-content-block-1" class="col-12 p-0" >
 
-    <div id="section-4-content-block-1-header" class="alert alert-secondary" >
+    <div id="section-5-content-block-1-header" class="alert alert-secondary" >
         <div>
           
                 <h5 class="m-0" >
@@ -1057,108 +1409,111 @@ $(function() {
 </div>
         
 
-<div id="section-4-content-block-2" class="col-12" >
+<div id="section-5-content-block-2" class="ml-2 mr-2 mt-0 mb-0 table-responsive" >
 
     
-
-<ul id="section-4-content-block-2-body" >
-    
-            
-        
-        <li >
-                <span >
-                    values must never be null.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    minimum value must be greater than or equal to <span class="badge badge-secondary" >3</span> and less than or equal to <span class="badge badge-secondary" >5</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    maximum value must be greater than or equal to <span class="badge badge-secondary" >49988</span> and less than or equal to <span class="badge badge-secondary" >49990</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    mean must be greater than or equal to <span class="badge badge-secondary" >25418.654</span> and less than or equal to <span class="badge badge-secondary" >25420.654</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    median must be greater than or equal to <span class="badge badge-secondary" >25382.5</span> and less than or equal to <span class="badge badge-secondary" >25384.5</span>.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
-                <span >
-                    quantiles must be within the following value ranges.
-                </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
 
 
 
 <table
-  id="section-4-content-block-2-body"
+  id="section-5-content-block-2-body"
+  class="table" 
+  data-toggle="table"
+  data-search="True" data-icon-size="sm" 
+>
+    
+    
+    
+      
+    
+      <thead >
+        <tr>
+            
+                
+                <th
+                  data-sortable="True" 
+                >
+                  Status
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Expectation
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Observed Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-5-content-block-2-cell-1-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-1-2" ><div class="show-scrollbars">
+                <span >
+                    values must never be null.
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-1-3" ><div class="show-scrollbars">100% not null</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-2-1" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-times text-danger" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-2-2" ><div class="show-scrollbars">
+                <span >
+                    minimum value must be greater than or equal to <span class="badge badge-secondary" >3</span> and less than or equal to <span class="badge badge-secondary" >5</span>.
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-2-3" ><div class="show-scrollbars">136</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-3-1" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-times text-danger" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-3-2" ><div class="show-scrollbars">
+                <span >
+                    maximum value must be greater than or equal to <span class="badge badge-secondary" >49988</span> and less than or equal to <span class="badge badge-secondary" >49990</span>.
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-3-3" ><div class="show-scrollbars">49970</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-4-1" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-times text-danger" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-4-2" ><div class="show-scrollbars">
+                <span >
+                    mean must be greater than or equal to <span class="badge badge-secondary" >25418.654</span> and less than or equal to <span class="badge badge-secondary" >25420.654</span>.
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-4-3" ><div class="show-scrollbars">25345.677</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-5-1" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-times text-danger" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-5-2" ><div class="show-scrollbars">
+                <span >
+                    median must be greater than or equal to <span class="badge badge-secondary" >25382.5</span> and less than or equal to <span class="badge badge-secondary" >25384.5</span>.
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-5-3" ><div class="show-scrollbars">25007</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-1" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-times text-danger" ></i>
+                </span>
+            </div></td><td id="section-5-content-block-2-cell-6-2" ><div class="show-scrollbars">
+                <span >
+                    quantiles must be within the following value ranges.
+                </span>
+            
+
+
+
+<table
+  id="section-5-content-block-2-cell-6-2-content-1-body"
   class="table table-sm table-unbordered col-4 mt-2" 
   data-toggle="table"
   
@@ -1197,35 +1552,68 @@ $(function() {
 
     <tbody>
       <tr>
-          <td id="section-4-content-block-2-cell-1-1" ><div class="show-scrollbars">0.05</div></td><td id="section-4-content-block-2-cell-1-2" ><div class="show-scrollbars">3158</div></td><td id="section-4-content-block-2-cell-1-3" ><div class="show-scrollbars">3160</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-2-1" ><div class="show-scrollbars">Q1</div></td><td id="section-4-content-block-2-cell-2-2" ><div class="show-scrollbars">12867</div></td><td id="section-4-content-block-2-cell-2-3" ><div class="show-scrollbars">12869</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-3-1" ><div class="show-scrollbars">Median</div></td><td id="section-4-content-block-2-cell-3-2" ><div class="show-scrollbars">25360</div></td><td id="section-4-content-block-2-cell-3-3" ><div class="show-scrollbars">25362</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-4-1" ><div class="show-scrollbars">Q3</div></td><td id="section-4-content-block-2-cell-4-2" ><div class="show-scrollbars">38125</div></td><td id="section-4-content-block-2-cell-4-3" ><div class="show-scrollbars">38127</div></td></tr><tr>
-          <td id="section-4-content-block-2-cell-5-1" ><div class="show-scrollbars">0.95</div></td><td id="section-4-content-block-2-cell-5-2" ><div class="show-scrollbars">48055</div></td><td id="section-4-content-block-2-cell-5-3" ><div class="show-scrollbars">48057</div></td></tr></tbody>
-</table></li>
+          <td id="section-5-content-block-2-cell-6-2-content-1-cell-1-1" ><div class="show-scrollbars">0.05</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-1-2" ><div class="show-scrollbars">3158</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-1-3" ><div class="show-scrollbars">3160</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-2-content-1-cell-2-1" ><div class="show-scrollbars">Q1</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-2-2" ><div class="show-scrollbars">12867</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-2-3" ><div class="show-scrollbars">12869</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-2-content-1-cell-3-1" ><div class="show-scrollbars">Median</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-3-2" ><div class="show-scrollbars">25360</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-3-3" ><div class="show-scrollbars">25362</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-2-content-1-cell-4-1" ><div class="show-scrollbars">Q3</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-4-2" ><div class="show-scrollbars">38125</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-4-3" ><div class="show-scrollbars">38127</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-2-content-1-cell-5-1" ><div class="show-scrollbars">0.95</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-5-2" ><div class="show-scrollbars">48055</div></td><td id="section-5-content-block-2-cell-6-2-content-1-cell-5-3" ><div class="show-scrollbars">48057</div></td></tr></tbody>
+</table></div></td><td id="section-5-content-block-2-cell-6-3" ><div class="show-scrollbars">
+
+
+
+<table
+  id="section-5-content-block-2-cell-6-3-content-body"
+  class="table table-sm table-unbordered col-4" 
+  data-toggle="table"
+  
+>
     
+    
+    
+      
+    
+      <thead >
+        <tr>
             
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
+                
+                <th
+                  
+                >
+                  Quantile
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-5-content-block-2-cell-6-3-content-cell-1-1" ><div class="show-scrollbars">0.05</div></td><td id="section-5-content-block-2-cell-6-3-content-cell-1-2" ><div class="show-scrollbars">3173</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-3-content-cell-2-1" ><div class="show-scrollbars">Q1</div></td><td id="section-5-content-block-2-cell-6-3-content-cell-2-2" ><div class="show-scrollbars">12993</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-3-content-cell-3-1" ><div class="show-scrollbars">Median</div></td><td id="section-5-content-block-2-cell-6-3-content-cell-3-2" ><div class="show-scrollbars">24982</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-3-content-cell-4-1" ><div class="show-scrollbars">Q3</div></td><td id="section-5-content-block-2-cell-6-3-content-cell-4-2" ><div class="show-scrollbars">37631</div></td></tr><tr>
+          <td id="section-5-content-block-2-cell-6-3-content-cell-5-1" ><div class="show-scrollbars">0.95</div></td><td id="section-5-content-block-2-cell-6-3-content-cell-5-2" ><div class="show-scrollbars">48211</div></td></tr></tbody>
+</table></div></td></tr></tbody>
+</table>
 
 </div>
         
     </div>
 </div>
         
-          <div id="section-5" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
+          <div id="section-6" class="ge-section container-fluid mb-1 pb-1 pl-sm-3 px-0">
     <div class="row" >
         
 
-<div id="section-5-content-block-1" class="col-12" >
+<div id="section-6-content-block-1" class="col-12 p-0" >
 
-    <div id="section-5-content-block-1-header" class="alert alert-secondary" >
+    <div id="section-6-content-block-1-header" class="alert alert-secondary" >
         <div>
           
                 <h5 class="m-0" >
@@ -1239,56 +1627,80 @@ $(function() {
 </div>
         
 
-<div id="section-5-content-block-2" class="col-12" >
+<div id="section-6-content-block-2" class="ml-2 mr-2 mt-0 mb-0 table-responsive hide-succeeded-validations-column-section-target-child" >
 
     
 
-<ul id="section-5-content-block-2-body" >
+
+
+<table
+  id="section-6-content-block-2-body"
+  class="table" 
+  data-toggle="table"
+  data-search="True" data-icon-size="sm" 
+>
     
+    
+    
+      
+    
+      <thead >
+        <tr>
             
-        
-        <li >
+                
+                <th
+                  data-sortable="True" 
+                >
+                  Status
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Expectation
+                </th>
+            
+                
+                <th
+                  
+                >
+                  Observed Value
+                </th>
+            
+        </tr>
+      </thead>
+
+    <tbody>
+      <tr>
+          <td id="section-6-content-block-2-cell-1-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-1-2" ><div class="show-scrollbars">
                 <span >
                     values must never be null.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
+            </div></td><td id="section-6-content-block-2-cell-1-3" ><div class="show-scrollbars">100% not null</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-2-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-2-2" ><div class="show-scrollbars">
                 <span >
                     distinct values must belong to this set: <span class="badge badge-secondary" >MASTER</span> <span class="badge badge-secondary" >MIR</span> <span class="badge badge-secondary" >VISA</span>.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-            
-        
-        <li >
+            </div></td><td id="section-6-content-block-2-cell-2-3" ><div class="show-scrollbars">['MASTER', 'MIR', 'VISA']</div></td></tr><tr>
+          <td id="section-6-content-block-2-cell-3-1" class="hide-succeeded-validation-target-child" ><div class="show-scrollbars">
+                <span >
+                    <i class="fas fa-check-circle text-success" ></i>
+                </span>
+            </div></td><td id="section-6-content-block-2-cell-3-2" ><div class="show-scrollbars">
                 <span >
                     Kullback-Leibler (KL) divergence with respect to the following distribution must be lower than 0.6.
                 </span>
-            </li>
-    
-            
-        
-        <li style="list-style-type:none;" ><div class="show-scrollbars">
-  <div id="section-5-content-block-2-graph" ></div>
+            <div class="show-scrollbars">
+  <div id="section-6-content-block-2-cell-3-2-content-1-graph-child-1" class="table" ></div>
 </div>
 <script>
     // Assign the specification to a local variable vlSpec.
@@ -1345,20 +1757,84 @@ $(function() {
   "width": 250
 };
     // Embed the visualization in the container with id `vis`
-    vegaEmbed('#section-5-content-block-2-graph', vlSpec, {
+    vegaEmbed('#section-6-content-block-2-cell-3-2-content-1-graph-child-1', vlSpec, {
         actions: false
     }).then(result=>console.log(result)).catch(console.warn);
-</script></li>
+</script></div></td><td id="section-6-content-block-2-cell-3-3" ><div class="show-scrollbars">
+
+<div id="section-6-content-block-2-cell-3-3-content-container" class="table" >
+  
     
+                <span class="mb-2" >
+                    KL Divergence: ≈0.0007569
+                </span>
             
-        
-        <li style="list-style-type:none;" >
-                <hr class="mt-1 mb-1" >
-                    
-                </hr>
-            </li>
-    
-</ul>
+  
+    <div class="show-scrollbars">
+  <div id="section-6-content-block-2-cell-3-3-content-graph" class="table" ></div>
+</div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    vlSpec = {
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "autosize": "fit",
+  "config": {
+    "view": {
+      "continuousHeight": 300,
+      "continuousWidth": 400
+    }
+  },
+  "data": {
+    "name": "data-bbeae3bacf574d8598f3cc97c79e083b"
+  },
+  "datasets": {
+    "data-bbeae3bacf574d8598f3cc97c79e083b": [
+      {
+        "fraction": 0.333,
+        "values": "MASTER"
+      },
+      {
+        "fraction": 0.357,
+        "values": "MIR"
+      },
+      {
+        "fraction": 0.31,
+        "values": "VISA"
+      }
+    ]
+  },
+  "encoding": {
+    "tooltip": [
+      {
+        "field": "values",
+        "type": "nominal"
+      },
+      {
+        "field": "fraction",
+        "type": "quantitative"
+      }
+    ],
+    "x": {
+      "field": "values",
+      "type": "nominal"
+    },
+    "y": {
+      "field": "fraction",
+      "type": "quantitative"
+    }
+  },
+  "height": 400,
+  "mark": "bar",
+  "width": 250
+};
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#section-6-content-block-2-cell-3-3-content-graph', vlSpec, {
+        actions: false
+    }).then(result=>console.log(result)).catch(console.warn);
+</script>
+  
+</div></div></td></tr></tbody>
+</table>
 
 </div>
         

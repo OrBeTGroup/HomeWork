@@ -1,6 +1,6 @@
 {
   "data_asset_type": "Dataset",
-  "expectation_suite_name": "aermokhin.ods_payment.warning",
+  "expectation_suite_name": "aermokhin.ods_traffic.warning",
   "expectations": [
     {
       "expectation_type": "expect_table_row_count_to_be_between",
@@ -13,7 +13,7 @@
     {
       "expectation_type": "expect_table_column_count_to_equal",
       "kwargs": {
-        "value": 8
+        "value": 6
       },
       "meta": {}
     },
@@ -22,13 +22,11 @@
       "kwargs": {
         "column_list": [
           "user_id",
-          "pay_doc_type",
-          "pay_doc_num",
-          "account",
-          "phone",
-          "billing_period",
-          "pay_date",
-          "sum"
+          "timestamp",
+          "device_id",
+          "device_ip_addr",
+          "bytes_sent",
+          "bytes_received"
         ]
       },
       "meta": {}
@@ -36,18 +34,24 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "pay_doc_type"
+        "column": "device_id"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_distinct_values_to_be_in_set",
       "kwargs": {
-        "column": "pay_doc_type",
+        "column": "device_id",
         "value_set": [
-          "MASTER",
-          "MIR",
-          "VISA"
+          "d001",
+          "d002",
+          "d003",
+          "d004",
+          "d005",
+          "d006",
+          "d007",
+          "d008",
+          "d009"
         ]
       },
       "meta": {}
@@ -55,17 +59,29 @@
     {
       "expectation_type": "expect_column_kl_divergence_to_be_less_than",
       "kwargs": {
-        "column": "pay_doc_type",
+        "column": "device_id",
         "partition_object": {
           "values": [
-            "MASTER",
-            "MIR",
-            "VISA"
+            "d001",
+            "d002",
+            "d003",
+            "d004",
+            "d005",
+            "d006",
+            "d007",
+            "d008",
+            "d009"
           ],
           "weights": [
-            0.346,
-            0.339,
-            0.315
+            0.104,
+            0.113,
+            0.133,
+            0.122,
+            0.103,
+            0.113,
+            0.107,
+            0.106,
+            0.099
           ]
         },
         "threshold": 0.6
@@ -75,43 +91,43 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "pay_doc_num"
+        "column": "bytes_sent"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_min_to_be_between",
       "kwargs": {
-        "column": "pay_doc_num",
-        "max_value": 5,
-        "min_value": 3
+        "column": "bytes_sent",
+        "max_value": 44,
+        "min_value": 42
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_max_to_be_between",
       "kwargs": {
-        "column": "pay_doc_num",
-        "max_value": 49990,
-        "min_value": 49988
+        "column": "bytes_sent",
+        "max_value": 49929,
+        "min_value": 49927
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_mean_to_be_between",
       "kwargs": {
-        "column": "pay_doc_num",
-        "max_value": 25420.654,
-        "min_value": 25418.654
+        "column": "bytes_sent",
+        "max_value": 25717.056,
+        "min_value": 25715.056
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_median_to_be_between",
       "kwargs": {
-        "column": "pay_doc_num",
-        "max_value": 25384.5,
-        "min_value": 25382.5
+        "column": "bytes_sent",
+        "max_value": 26428.5,
+        "min_value": 26426.5
       },
       "meta": {}
     },
@@ -119,7 +135,7 @@
       "expectation_type": "expect_column_quantile_values_to_be_between",
       "kwargs": {
         "allow_relative_error": true,
-        "column": "pay_doc_num",
+        "column": "bytes_sent",
         "quantile_ranges": {
           "quantiles": [
             0.05,
@@ -130,24 +146,24 @@
           ],
           "value_ranges": [
             [
-              3158,
-              3160
+              2941,
+              2943
             ],
             [
-              12867,
-              12869
+              13270,
+              13272
             ],
             [
-              25360,
-              25362
+              26409,
+              26411
             ],
             [
-              38125,
-              38127
+              37381,
+              37383
             ],
             [
-              48055,
-              48057
+              47490,
+              47492
             ]
           ]
         }
@@ -157,14 +173,14 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "account"
+        "column": "device_ip_addr"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_value_lengths_to_be_between",
       "kwargs": {
-        "column": "account",
+        "column": "device_ip_addr",
         "min_value": 1
       },
       "meta": {}
@@ -172,82 +188,37 @@
     {
       "expectation_type": "expect_column_values_to_not_be_null",
       "kwargs": {
-        "column": "pay_date"
+        "column": "timestamp"
       },
       "meta": {}
     },
     {
       "expectation_type": "expect_column_values_to_be_between",
       "kwargs": {
-        "column": "pay_date",
-        "max_value": "2015-12-31 00:00:00",
-        "min_value": "2012-01-04 00:00:00",
+        "column": "timestamp",
+        "max_value": "2015-12-31 19:22:31.268000",
+        "min_value": "2012-01-03 18:22:31.268000",
         "parse_strings_as_datetimes": true
       },
       "meta": {}
     }
   ],
   "meta": {
-    "BasicSuiteBuilderProfiler": {
-      "batch_kwargs": {
-        "data_asset_name": "aermokhin.ods_payment",
-        "datasource": "gp",
-        "limit": 1000,
-        "schema": "aermokhin",
-        "table": "ods_payment"
-      },
-      "created_at": 1620733339.7020895,
-      "created_by": "BasicSuiteBuilderProfiler"
-    },
     "citations": [
       {
         "batch_kwargs": {
-          "data_asset_name": "aermokhin.ods_payment",
+          "data_asset_name": "aermokhin.ods_traffic",
           "datasource": "gp",
           "limit": 1000,
           "schema": "aermokhin",
-          "table": "ods_payment"
+          "table": "ods_traffic"
         },
-        "batch_markers": {
-          "ge_load_time": "20210511T114210.392740Z"
-        },
+        "batch_markers": null,
         "batch_parameters": null,
-        "citation_date": "20210511T114222.427746Z",
-        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+        "citation_date": "20210511T115737.001193Z",
+        "comment": "New suite added via CLI"
       }
     ],
-    "columns": {
-      "account": {
-        "description": ""
-      },
-      "billing_period": {
-        "description": ""
-      },
-      "pay_date": {
-        "description": ""
-      },
-      "pay_doc_num": {
-        "description": ""
-      },
-      "pay_doc_type": {
-        "description": ""
-      },
-      "phone": {
-        "description": ""
-      },
-      "sum": {
-        "description": ""
-      },
-      "user_id": {
-        "description": ""
-      }
-    },
-    "great_expectations_version": "0.13.14",
-    "notes": {
-      "content": [
-        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
-      ],
-      "format": "markdown"
-    }
+    "great_expectations_version": "0.13.14"
   }
 }
