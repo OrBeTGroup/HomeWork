@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # great_expectations
 Запуск тестов таблиц
 --payment--
